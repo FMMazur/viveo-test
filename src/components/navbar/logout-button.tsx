@@ -19,7 +19,7 @@ export const LogoutButton = () => {
   return (
     <Button
       variant="ghost"
-      className="py-0 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+      className="py-0 border-2 bg-white dark:bg-black border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
       onClick={handleClick}>
       Sair
     </Button>
