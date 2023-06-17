@@ -10,16 +10,15 @@ export const Navbar = () => {
   if (!mounted) return;
 
   return (
-    <nav className="w-full fixed bg-transparent p-4 flex items-center justify-center pointer-events-none">
+    <nav className="fixed top-0 right-0 bg-transparent p-4 flex items-center justify-center">
       <div className="w-full max-w-screen-2xl flex justify-end items-center gap-x-2">
         <ButtonToggleTheme />
 
-        {
-          isUserLogged &&
+        {isUserLogged && (
           <>
             <LogoutButton />
           </>
-        }
+        )}
       </div>
     </nav>
   );
