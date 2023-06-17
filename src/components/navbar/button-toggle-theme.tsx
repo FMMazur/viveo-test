@@ -14,9 +14,10 @@ export const ButtonToggleTheme = () => {
 
   return (
     <Switch
+      aria-label="Theme Switch"
       checked={isDarkTheme}
       onCheckedChange={changeTheme}
-      className='border border-black dark:border-white'
+      className="border-2 border-black dark:border-white"
       icon={
         <Thumb asChild className={cn(thumbStyle, 'p-1')}>
           <div className="flex items-center justify-center bg-white dark:bg-black">
@@ -25,6 +26,10 @@ export const ButtonToggleTheme = () => {
             ) : (
               <Sun className="fill-black w-4 h-4" />
             )}
+
+            <div className="sr-only">
+              {isDarkTheme ? 'Dark Theme' : 'Light Theme'}
+            </div>
           </div>
         </Thumb>
       }

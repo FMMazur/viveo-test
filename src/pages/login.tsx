@@ -21,7 +21,7 @@ export default function Login() {
 
         <div className="flex h-full justify-center items-center w-full">
           <span className="text-xs md:text-base">Não possui uma conta?</span>
-          <Button variant="link" asChild className="text-[#1A7FC1] pl-1 text-xs md:text-base py-0">
+          <Button variant="link" asChild className="text-[#1A7FC1] pl-1 text-xs md:text-base py-0 font-bold">
             <Link href="/signup">Cadastre-se</Link>
           </Button>
         </div>

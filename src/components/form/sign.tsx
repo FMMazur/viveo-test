@@ -92,7 +92,7 @@ export const SignForm = ({ onSubmit, type }: SignFormProps) => {
           <Button
             variant="link"
             asChild
-            className="text-right text-[#1A7FC1] pb-0 leading-none h-fit">
+            className="text-right text-[#1A7FC1] pb-0 leading-none h-fit font-bold">
             <Link href="#">Esqueceu sua senha?</Link>
           </Button>
         </div>
