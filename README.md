@@ -19,5 +19,5 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-[Online Link](https://viveo-test.vercel.app/)
-[Page Quality](https://pagespeed.web.dev/analysis/https-viveo-test-vercel-app/nvx1n5qe76)
+* [Online Link](https://viveo-test.vercel.app/)
+* [Page Quality](https://pagespeed.web.dev/analysis/https-viveo-test-vercel-app/nvx1n5qe76)
