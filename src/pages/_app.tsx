@@ -16,6 +16,8 @@ import { useUser } from '@/hooks/user/useUser';
 import { ToastContainer } from 'react-toastify';
 import { Loading } from '@/components/ui/loading';
 import { useTimer } from '@/hooks/utils/useTimer';
+import { DefaultSeo } from 'next-seo';
+import Head from 'next/head';
 
 const UserProvider = () => {
   const { isLoading } = useUser();
@@ -25,7 +27,7 @@ const UserProvider = () => {
     if (!isLoading) return;
 
     start();
-  }, [isLoading, start])
+  }, [isLoading, start]);
 
   return isLoading || enabled ? (
     <div className="flex items-center justify-center fixed z-10 top-0 left-0 w-screen h-screen bg-white dark:bg-black">
@@ -41,6 +43,18 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </Head>
+        <DefaultSeo
+          defaultTitle="Viveo Test"
+          titleTemplate="%s | Viveo Test"
+          description="random user list"
+        />
+
         <UserProvider />
 
         <Navbar />
