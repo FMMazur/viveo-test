@@ -16,9 +16,10 @@ export const ButtonToggleTheme = () => {
     <Switch
       checked={isDarkTheme}
       onCheckedChange={changeTheme}
+      className='border border-black dark:border-white'
       icon={
         <Thumb asChild className={cn(thumbStyle, 'p-1')}>
-          <div className="flex items-center justify-center bg-white dark:bg-black ">
+          <div className="flex items-center justify-center bg-white dark:bg-black">
             {isDarkTheme ? (
               <Moon className="dark:fill-white w-4 h-4" />
             ) : (
