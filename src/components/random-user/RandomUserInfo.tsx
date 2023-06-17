@@ -37,11 +37,11 @@ export const RandomUserInfo = () => {
             height={96}
           />
 
-          <h5 className="select-all text-xl font-medium text-gray-900 dark:text-white">
+          <h5 className="select-text lg:select-all text-xl font-medium text-gray-900 dark:text-white">
             {name.first} {name.last}
           </h5>
 
-          <span className="select-all text-sm text-gray-500 dark:text-gray-400">
+          <span className="select-text lg:select-all text-sm text-gray-500 dark:text-gray-400">
             {location.city},{' '}
             {nat === 'BR'
               ? STATES[location.state]
@@ -59,7 +59,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-1 text-gray-500 dark:text-gray-400">
                 Nome
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {name.first}
               </span>
             </div>
@@ -68,7 +68,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Sobrenome
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {name.last}
               </span>
             </div>
@@ -77,7 +77,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Gênero
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {getGender(gender)}
               </span>
             </div>
@@ -86,7 +86,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Data de Nascimento
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {formatDateToString(dob.date)}
               </span>
             </div>
@@ -103,7 +103,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Email
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {email}
               </span>
             </div>
@@ -112,7 +112,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Celular
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {cell}
               </span>
             </div>
@@ -129,7 +129,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-1 text-gray-500 dark:text-gray-400">
                 Endereço
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {location.street.name}
               </span>
             </div>
@@ -138,7 +138,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Número
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {location.street.number}
               </span>
             </div>
@@ -147,7 +147,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Cidade
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {location.city}
               </span>
             </div>
@@ -156,7 +156,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Estado
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {location.state}
               </span>
             </div>
@@ -165,7 +165,7 @@ export const RandomUserInfo = () => {
               <Label className="pl-2 text-gray-500 dark:text-gray-400">
                 Código Postal
               </Label>
-              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
+              <span className="bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 rounded-md border p-2 shadow select-text lg:select-all text-center text-ellipsis overflow-hidden whitespace-nowrap">
                 {location.postcode}
               </span>
             </div>
