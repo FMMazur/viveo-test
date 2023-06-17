@@ -6,11 +6,13 @@
 
 ```sh
 pnpm i
+pnpm prisma
 pnpm dev
 ```
 
 ```sh
 yarn
+yarn prisma
 yarn dev
 ```
 
