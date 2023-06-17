@@ -19,7 +19,7 @@ import { RadioGroup } from '@headlessui/react';
 import { GenderType, getGender } from '@/lib/utils/gender';
 import { CheckCircle2, Circle, XSquare } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
-import { memo, use, useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 
 const LoadSavedUser = memo(function LoadSavedUser({
   user,
@@ -48,7 +48,8 @@ const LoadSavedUser = memo(function LoadSavedUser({
       className={cn('px-0', {
         'underline text-black dark:text-white': currentUser?.seed === user.seed,
       })}
-      onClick={changeUser}>
+      onClick={changeUser}
+    >
       <span className="text-start w-full">
         {first} {last}
       </span>
@@ -71,14 +72,16 @@ const RandomUserFilterRadio = memo(function RandomUserFilterRadio() {
     <RadioGroup
       value={gender}
       onChange={handleChangeGender}
-      className="flex flex-col gap-2 p-3 border-2 rounded-lg border-black dark:border-white">
+      className="flex flex-col gap-2 p-3 border-2 rounded-lg border-black dark:border-white"
+    >
       <RadioGroup.Label>
         <div className="flex justify-between items-center">
           <span>Gênero</span>
           <Button
             onClick={clearFilter}
             variant="ghost"
-            className="p-0 w-6 h-6 text-black dark:text-white hover:opacity-60 transition-opacity">
+            className="p-0 w-6 h-6 text-black dark:text-white hover:opacity-60 transition-opacity"
+          >
             <XSquare />
           </Button>
         </div>
@@ -89,14 +92,16 @@ const RandomUserFilterRadio = memo(function RandomUserFilterRadio() {
           <RadioGroup.Option
             key={`filter-gender-option-${gender}`}
             value={gender}
-            className="relative flex cursor-pointer rounded-lg px-4 focus:outline-none transition-opacity hover:opacity-90">
+            className="relative flex cursor-pointer rounded-lg px-4 focus:outline-none transition-opacity hover:opacity-90"
+          >
             {({ checked }) => (
               <div className="flex items-center gap-x-2 w-full">
                 <div
                   className={`
                   shrink-0
                   ${checked && 'text-primary'}
-                `}>
+                `}
+                >
                   {checked && <CheckCircle2 className="h-6 w-6" />}
                   {!checked && <Circle className="h-6 w-6" />}
                 </div>
@@ -104,7 +109,8 @@ const RandomUserFilterRadio = memo(function RandomUserFilterRadio() {
                   className={buttonVariants({
                     variant: 'link',
                     className: 'p-0 w-full text-start',
-                  })}>
+                  })}
+                >
                   <span className="text-start w-full">{getGender(gender)}</span>
                 </div>
               </div>
@@ -162,7 +168,14 @@ export const RandomUserGeneratedList = () => {
 
         <AccordionContent>
           <div className="flex flex-col gap-4 scroll-">
-            <div className="flex flex-col overflow-y-auto max-h-44 px-3 rounded-lg border-2 border-black dark:border-white scroll-smooth">
+            <div
+              className={cn(
+                'flex flex-col overflow-y-auto max-h-44 px-3 rounded-lg scroll-smooth',
+                {
+                  'border-2 border-black dark:border-white': users.length > 0,
+                },
+              )}
+            >
               {users.map((user) => (
                 <LoadSavedUser key={user.seed} user={user} />
               ))}
