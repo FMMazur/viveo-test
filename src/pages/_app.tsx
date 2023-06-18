@@ -8,33 +8,14 @@ import {
 } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '@/hooks/utils/useTheme';
 import { Navbar } from '@/components/navbar';
 // import { DevTools as JotaiDevtools } from 'jotai-devtools';
-import { useUser } from '@/hooks/user/useUser';
 import { ToastContainer } from 'react-toastify';
-import { Loading } from '@/components/ui/loading';
-import { useTimer } from '@/hooks/utils/useTimer';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
-
-const UserProvider = () => {
-  const { isLoading } = useUser();
-  const { enabled, start } = useTimer(300);
-
-  useEffect(() => {
-    if (!isLoading) return;
-
-    start();
-  }, [isLoading, start]);
-
-  return isLoading || enabled ? (
-    <div className="flex items-center justify-center fixed z-10 top-0 left-0 w-screen h-screen bg-white dark:bg-black">
-      <Loading />
-    </div>
-  ) : null;
-};
+import { UserProvider } from '@/components/provider/user';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
