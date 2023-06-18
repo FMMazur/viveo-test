@@ -8,9 +8,11 @@ import { cn } from '@/lib/utils/cn';
 import { useIsUserLogged } from '@/hooks/user/useIsUserLogged';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { useRandomFactForToday } from '@/hooks/useRandomFact';
+import Link from 'next/link';
 
 export default function Home() {
-  // const { fact } = useRandomFactForToday();
+  const { fact } = useRandomFactForToday();
   const router = useRouter();
   const isUserLogged = useIsUserLogged();
   const { isFetching, requestUser } = useRandomUser();
@@ -33,6 +35,24 @@ export default function Home() {
           <hr className="border-t border-black dark:border-white w-full" />
 
           <RandomUserGeneratedList />
+
+          {fact && (
+            <div className="sr-only lg:not-sr-only lg:flex lg:flex-col lg:mt-40 lg:p-8 lg:rounded-lg lg:text-justify border-2 border-black dark:border-white bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5 max-w-full">
+              <span className="text-sm leading-tight text-black text-opacity-80 dark:text-white dark:text-opacity-80">
+                {fact.text}
+              </span>
+
+              <Link
+                href={fact.source_url}
+                target='_blank'
+                referrerPolicy='no-referrer'
+                rel="noopener noreferrer"
+                className="mt-4 text-xs text-black text-opacity-50 dark:text-white dark:text-opacity-50 hover:underline"
+              >
+                {fact.source}
+              </Link>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col lg:col-span-2 gap-3 items-center justify-center h-full overflow-hidden">
@@ -40,7 +60,8 @@ export default function Home() {
             className={cn('flex lg:justify-center overflow-hidden', {
               'h-fit lg:py-8': !isFetching,
               'h-full py-24 md:py-48': isFetching,
-            })}>
+            })}
+          >
             {isFetching && <RandomUserSkeleton />}
             {!isFetching && <RandomUserInfo />}
           </div>
